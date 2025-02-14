@@ -241,9 +241,9 @@
         }
       };
 
-      // professors airport layer
+      // my airport layer
       const airportLayer = new FeatureLayer({
-        url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/US_Airports/FeatureServer",
+        url: "https://services.arcgis.com/LBbVDC0hKPAnLRpO/arcgis/rest/services/US_Airports_KTorres/FeatureServer",
         renderer: airportRenderer,
         definitionExpression: "Fac_Type = 'AIRPORT'",
         labelingInfo: [airportLabels]
@@ -261,7 +261,7 @@
       }
 
       const heliportLayer = new FeatureLayer({
-        url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/US_Airports/FeatureServer",
+        url: "https://services.arcgis.com/LBbVDC0hKPAnLRpO/arcgis/rest/services/US_Airports_KTorres/FeatureServer",
         renderer: heliportRenderer,
         definitionExpression: "Fac_Type = 'HELIPORT'",
         labelingInfo: [airportLabels]
@@ -273,29 +273,9 @@
       console.error("Error loading FeatureLayer: ", error);
     });
 
-    
-      // Create Airports layer from my AGOL
-      const myairportLayer = new FeatureLayer({
-        url: "https://services.arcgis.com/LBbVDC0hKPAnLRpO/arcgis/rest/services/US_Airports_KTorres/FeatureServer",
-      });
-
-      myairportLayer.load().then(function() {
-      console.log("FeatureLayer loaded successfully");
-    }).catch(function(error) {
-      console.error("Error loading FeatureLayer: ", error);
-    });
-
-      // Add the Airports layer to the map
-      map.add(myairportLayer);
-      
-
-      //map.add(airportLayer);
+      map.add(airportLayer);
       map.add(heliportLayer);
       
-
-
-
-
 
     });
   </script>
