@@ -273,10 +273,10 @@
       console.error("Error loading FeatureLayer: ", error);
     });
 
-    /*
+    
       // Create Airports layer from my AGOL
       const myairportLayer = new FeatureLayer({
-        url: "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/Airports/FeatureServer",
+        url: "https://services.arcgis.com/LBbVDC0hKPAnLRpO/arcgis/rest/services/US_Airports_KTorres/FeatureServer",
       });
 
       myairportLayer.load().then(function() {
@@ -287,9 +287,9 @@
 
       // Add the Airports layer to the map
       map.add(myairportLayer);
-      */
+      
 
-      map.add(airportLayer);
+      //map.add(airportLayer);
       map.add(heliportLayer);
       
 
